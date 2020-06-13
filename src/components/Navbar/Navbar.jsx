@@ -1,5 +1,6 @@
 import React from 'react';
-import { AppBar, Toolbar, Typography } from '@material-ui/core';
+import { Link } from 'react-router-dom';
+import { AppBar, Toolbar, Typography, Button } from '@material-ui/core';
 
 
 const Navbar = () => {
@@ -9,6 +10,8 @@ const Navbar = () => {
             <Typography variant="h6">
                 COVID-Tracker
             </Typography>
+            <Button color="inherit" component={Link} to="/global">Global</Button>
+            <Button color="inherit" component={Link} to="/maharastra">Maharastra</Button>
         </Toolbar>
         </AppBar>
 

@@ -1,45 +1,26 @@
 import React, { Component }  from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import {  Cards, Chart, CountryPicker, Navbar } from './components';
-import styles from './App.module.css';
-import { fetchData } from './api/index';
+import {  Navbar } from './components';
+
+
+import  maha  from './pages/maha';
+import home from './pages/home';
 
 class App extends Component {
 
-    state = {
-        data: {},
-        country:'',
-    }
-
-    async componentDidMount() {
-        const fetchedData = await fetchData();
-
-        this.setState({data: fetchedData});
-    }
-
-    handleCountryChange = async (country) => {
-        if(country==='global') {
-            
-            const fetchedData = await fetchData();
-            this.setState({data: fetchedData, country: ''});
-        }
-        else{
-        const fetchedData = await fetchData(country);
-        
-        this.setState({data: fetchedData, country: country});
-        }
-    }
-
     render() {
 
-        const { data, country } = this.state;
 
         return (
-            <div className={styles.container}>
-                <Navbar />
-                <Cards data={data}/>
-                <CountryPicker handleCountryChange={this.handleCountryChange}/>
-                <Chart data={data} country={country}/>
+            <div>
+            <Router>
+            <Navbar />
+                <Switch>
+                    <Route path="/global" component={home} />
+                    <Route path="/maharastra" component={maha}/>
+                </Switch>
+            </Router>
             </div>
         )
     }
