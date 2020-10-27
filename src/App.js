@@ -5,16 +5,15 @@ import { Navbar } from "./components";
 
 import maha from "./pages/maha";
 import home from "./pages/home";
+import World from "./pages/World/World";
 
 class App extends Component {
   render() {
     return (
       <div>
         <Router>
-          <Navbar />
           <Switch>
-            <Route exact path="/" component={home} />
-            <Route exact path="/maharastra" component={maha} />
+            <Route exact path="/" component={World} />
           </Switch>
         </Router>
       </div>
