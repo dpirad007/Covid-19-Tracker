@@ -9,7 +9,8 @@ const World = () => {
     <div className="main">
       <h1 style={{ color: "white" }}>Corona Virus Tracker</h1>
       <WorldChart />
-      <BumpChart style={{ height: "500px" }} />
+      {/*  <BumpChart style={{ height: "500px" }} />*/}
+      <h1>Global Data</h1>
       <ChoroChart style={{ height: "500px" }} />
     </div>
   );
