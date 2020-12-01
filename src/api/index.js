@@ -80,3 +80,38 @@ export const fetchDistData = async (dist) => {
     console.log(error);
   }
 };
+
+export const choropelthData = async () => {
+  const cholroCountries = "https://covid19.mathdro.id/api/countries";
+
+  let finalArray = [];
+
+  try {
+    const res = await axios.get(cholroCountries);
+
+    finalArray = res.data.countries.map((obj) => obj.iso3);
+    console.log(finalArray);
+
+    return finalArray;
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+export const choropelthFinal = async (arr) => {
+  let data = [];
+  let cholroCountriesData = "https://covid19.mathdro.id/api/countries";
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i]) {
+      try {
+        const resCountriesData = await axios.get(
+          `${cholroCountriesData}/${arr[i]}`
+        );
+        data.push({ id: arr[i], value: resCountriesData.data.confirmed.value });
+        console.log(resCountriesData.data.confirmed.value);
+      } catch (e) {}
+    }
+  }
+  return data;
+};

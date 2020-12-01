@@ -2,7 +2,7 @@
   "name": "maha-covid",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://dpirad007.github.io/Covid-19-Tracker/",
+  "homepage": "https://dpirad007.github.io",
   "dependencies": {
     "@material-ui/core": "^4.10.1",
     "@nivo/axes": "^0.63.0",

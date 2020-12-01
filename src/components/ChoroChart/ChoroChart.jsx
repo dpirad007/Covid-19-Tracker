@@ -2,10 +2,10 @@ import React from "react";
 import { ResponsiveChoropleth } from "@nivo/geo";
 import countries from "./world_countries.json";
 
-import data from "./dataCC";
+// import data from "./dataCC";
 
-const ChoroChart = () => {
-  return (
+const ChoroChart = ({ data }) => {
+  const finalChart = data ? (
     <ResponsiveChoropleth
       data={data}
       features={countries.features}
@@ -48,6 +48,10 @@ const ChoroChart = () => {
         },
       ]}
     />
+  ) : (
+    <h1>Loading</h1>
   );
+
+  return finalChart;
 };
 export default ChoroChart;

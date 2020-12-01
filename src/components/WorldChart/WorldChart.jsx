@@ -7,7 +7,7 @@ const theme = {
   axis: {
     ticks: {
       text: {
-        fill: "white",
+        fill: "black",
       },
     },
   },

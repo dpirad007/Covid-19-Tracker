@@ -10,6 +10,9 @@ const Navbar = () => {
         <Button color="inherit" component={Link} to="/">
           Global
         </Button>
+        <Button color="inherit" component={Link} to="/world">
+          Choropelth
+        </Button>
         <Button color="inherit" component={Link} to="/maharastra">
           Maharastra
         </Button>

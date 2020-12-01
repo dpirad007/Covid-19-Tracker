@@ -4,6 +4,9 @@
   margin: 0 auto;
 }
 
-h1 {
-  color: white;
+.wr-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
 }
